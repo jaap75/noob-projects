@@ -4,12 +4,11 @@ import random
 print("welcome to the number guessing game")
 print("I will pick a number between 0 and 25")
 print("Can you guess it in 5 tries?")
-print("let us begin?")
 
 number = random.randint(0,25)
 
 def game():
-  tries = 25
+  tries = 5
   status = "" 
   while tries > 0:
     guess = int(input("\nPlease enter your guess:"))
@@ -30,13 +29,13 @@ def game():
 
 a = False
 while a == False:
-  start_game = input("Do you want to start the game? y/n")
+  start_game = input("\nDo you want to start the game? y/n:")
   if start_game == "y":
     game()
   elif start_game == "n":
     b = False
     while b == False:
-      quit_prog = input("Do you want to quit? y/n")
+      quit_prog = input("Do you want to quit? y/n:")
       if quit_prog == "y":
         print("Goodbye!")
         sys.exit()
