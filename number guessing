@@ -7,29 +7,42 @@ print("Can you guess it in 5 tries?")
 print("let us begin?")
 
 number = random.randint(0,25)
-tries = 5
-status = ""
 
-while tries > 0:
-  guess = int(input("\nPlease enter your guess:"))
-  if guess == number:
-    print("Congratulations! You won!!! =]")
-    status = "Winner"
-    break
-  elif guess > number:
-    print("Guess lower")
-    tries -= 1
-  elif guess < number:
-    print("Guess higer")
-    tries -= 1
-  print("\nYou have", tries , "tries left" )
-if status != "Winner":
-  print("\nyou lose")
-  print("The correct anwser was", number)
+def game():
+  tries = 25
+  status = "" 
+  while tries > 0:
+    guess = int(input("\nPlease enter your guess:"))
+    if guess == number:
+      print("Congratulations! You won!!! =]")
+      status = "Winner"
+      break
+    elif guess > number:
+      print("Guess lower")
+      tries -= 1
+    elif guess < number:
+      print("Guess higer")
+      tries -= 1
+    print("\nYou have", tries , "tries left" )
+  if status != "Winner":
+    print("\nyou lose")
+    print("The correct anwser was", number)
 
-print("\npress y to terminate the program")
-i = input()
-if i == "y":
-  sys.exit()
-else:
-  print("you did not enter yes")
+a = False
+while a == False:
+  start_game = input("Do you want to start the game? y/n")
+  if start_game == "y":
+    game()
+  elif start_game == "n":
+    b = False
+    while b == False:
+      quit_prog = input("Do you want to quit? y/n")
+      if quit_prog == "y":
+        print("Goodbye!")
+        sys.exit()
+      elif quit_prog == "n":
+        break
+      else:
+        print("I don't understand, please enter y or n")
+  else:
+    print("I don't understand, please enter y or n")
