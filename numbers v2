@@ -1,0 +1,31 @@
+import random
+
+print("Welcome to the number guessing game!")
+print("I will pick any number between 1 and 25")
+print("You can try 5 times before the game is over.")
+
+tries = 5
+answer = False
+number = random.randint(1,25)
+
+print("\nLet us begin!")
+
+while tries > 0:
+  a = int(input("\npick a number: "))
+  if a < number:
+    print("You guessed to low")
+    tries -= 1
+    print("You have ", tries, " tries left") 
+  elif a > number:
+    print("You guessed to high")
+    tries -= 1
+    print("You have ", tries, " tries left")
+  elif a == number:
+   print("Congratulations!!!!")
+   print("You won!!!")
+   print("It took you", 6 - tries, " tries")
+   break
+
+if tries == 0:
+  print("You lose!")
+  print("\nThe correct answer was: ", number)
