@@ -1,0 +1,62 @@
+spam = ["cat","dog","horse","mouse","bird"]
+print(spam[0])
+print(spam[-1])
+print(spam[:2])
+print(spam[1:4])
+print(len(spam))
+
+spam[1] = "something else"  #change the value of a list index
+print(spam)
+
+bacon = [1,2,3]
+print(spam + bacon) #concatenate multiple lists
+print(spam + [4,5,6])
+
+print(bacon * 3) # repliccates the bacon list 3 times
+
+del spam[1] # delete a value at an index in a list
+print(spam)
+
+print("-----------------------------------------------------------------------------------------------")
+
+# in stead of making a lot of the same lines of code you can use a list.
+# this is easier to manage the different variables
+# the code below shows a example of how to make a list of user input
+
+catnames = []
+while True:
+  print("enther the name of the cat " + str(len(catnames) + 1) + " (or enter nothing to stop.):")
+  name = input()
+  if name == "": 
+    break
+  catnames = catnames + [name]  # list concatenation
+
+print("The cat names are:")
+for name in catnames:
+  print("  " + name)
+  
+print(catnames)
+
+print("-----------------------------------------------------------------------------------------------")
+
+# range(len(somelist)) is often used with a for loop to itterate over all the indexes in a list.
+# check below for an example
+
+supplies = ["pens","staplers","flame-throwers","binders"]
+for i in range(len(supplies)):
+  print("at index number " + str(i) + " the value is: " + supplies[i])
+  
+print("-----------------------------------------------------------------------------------------------")
+
+# the in and not in operators
+# these operators can be used to check if a values is inside a list.
+# this retruns a boolean values
+
+myPets = ['Zophie', 'Pooka', 'Fat-tail']
+print('Enter a pet name:')
+name = input()
+if name not in myPets:
+  print('I do not have a pet named ' + name)
+else:
+  print(name + ' is my pet.')
+  
