@@ -1,0 +1,9 @@
+spam = ["apples","bananas","tofu","cats"]
+
+print("'", end="")                      # opening with a single quote 
+for i in range(len(spam)-1):            # iterate through spam except for the last value
+  print(spam[i] , end=", ")             # prints the value of spam[i] with a comma and a space
+print("and " + spam[-1] , end="")       # prints "and " and the last value of spam
+print("'")                              # end with a single quote
+
+
